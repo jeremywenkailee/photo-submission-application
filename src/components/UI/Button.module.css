@@ -1,0 +1,14 @@
+.uiButton {
+    padding: 9px 25px;
+    background-color: rgb(35, 142, 138);
+    border:none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.uiButton:hover{
+    background-color: rgba(35, 142, 138,0.8) ;
+}

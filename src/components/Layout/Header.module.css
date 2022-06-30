@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@600&display=swap');
+
+.headerEntry, li, a {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.headerTitle{
+    background-color: inherit;
+}
+
+.headerTitle h1, img{
+    font-family:'Bai Jamjuree', sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: inherit;
+}
+
+
+.header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #131718;
+}
+
+.headerCta{
+    list-style: none;
+    background-color:#131718;
+}
+
+.headerCta li {
+    display: inline-block;
+    padding: 0px 20px;
+    background-color: inherit;
+}
+
+.headerCta li a{
+    transition: all 0.3s ease 0s;
+    background-color: inherit;
+}
+
+.headerCta li a:hover{
+    color: rgba(35, 142, 138,0.8);
+    font-size:16.5px;
+}
+
+
+
+
+/* .title{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    padding:0;
+    float:left;
+    overflow: hidden;
+    color: white;
+}
+
+
+.logo{
+    height: 2rem;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header{
+    background-color: #555;
+    margin: 0;
+    padding:0;
+    position:fixed;
+}
+
+.headerCta{
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-right:20px;
+}
+ */
