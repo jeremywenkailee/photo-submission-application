@@ -1,16 +1,30 @@
 import classes from '../ViewPage/ViewPage.module.css'
 import SidebarSingleEntry from './SidebarSingleEntry';
+import SidebarFilter from './SidebarFilter';
+import { useEffect, useState } from 'react';
 
-const testData = [
-    {id: 1, submittedBy: 'Jeremy', name: 'English Bay', type:'Beach' , description: 'A great place to start walking along the Seawall. Famously known after the Expo 86, a convention of science held in 1986. alk sdflkjsd ks kfjk sdjf ksdjfk sjdfk jsdk fjsdkf jsdkfj skdfj sldkf jalsdkf jasdlkfj skdfj skdjf laskdf jsldkf jsldkf jsldkfj alkdjfsldk', lat: 49.287572777666156, lon:-123.16171730717282},
-    {id: 2, submittedBy: 'Jeremy', name: 'English Bay', type:'Beach', description: 'A great place to start walking along the Seawall', lat: 49.287572777666156, lon:-123.16171730717282},
-    {id: 3, submittedBy: 'Jeremy', name: 'English Bay', type:'Building', description: 'A great place to start walking along the Seawall', lat: 49.287572777666156, lon:-123.16171730717282},
-]
 
-const SideBar = () => {
+const SideBar = (props) => {
+    const [filteredList, setFilteredList] = useState(props.data);
+
+    const updateKeyphraseHandler = (keyphraseInput) => {
+        if(keyphraseInput.length === 0){
+            setFilteredList(props.data);
+        } else {
+            // console.log(filteredList)
+            setFilteredList(props.data.filter((entry) => entry.name.includes(keyphraseInput)))
+        }
+    }
+
+
+
     return <div className={classes.sidebar}>
-        {testData.map((mapEntry) => {
-            return <SidebarSingleEntry mapValue = {mapEntry} />
+        <SidebarFilter onUpdate = {updateKeyphraseHandler}  />
+        {/* {props.data.map((mapEntry) => {
+            return <SidebarSingleEntry onUpdate = {updateKeyphraseHandler} key = {mapEntry.id} mapValue = {mapEntry} />
+        })} */}
+        {filteredList.map((mapEntry) => {
+            return <SidebarSingleEntry key = {mapEntry.id} mapValue = {mapEntry} />
         })}
 
     </div>

@@ -1,9 +1,7 @@
 import testImage from "../../images/test.jpg";
 import "../ViewPage/ViewPage.module.css";
-import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-
+import React, { useEffect, useState } from "react";
+import { GoogleMap, LoadScript, MarkerF } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
@@ -18,12 +16,20 @@ const center = {
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 const Map = (props) => {
+  const [mapIsLoaded,setMapIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setMapIsLoaded(true);
+  },[])
+
   return (
     <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={8}>
         {/* Child components, such as markers, info windows, etc. */}
         {/* <></> */}
-        <Marker position={{ lat: 49.262828, lng: -123.22841 }}></Marker>
+        {mapIsLoaded && props.data.map((location) =>{
+          return <MarkerF key = {location.id} position = {{lat: location.lat, lng: location.lon}} />
+        })}
       </GoogleMap>
     </LoadScript>
   );

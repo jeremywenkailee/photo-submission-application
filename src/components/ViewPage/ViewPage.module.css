@@ -19,12 +19,12 @@
     padding-top: 0px;
     background-color: #444;
     margin:0px;
-    
+    overflow-y: scroll;
 }
 
 .sidebarEntry {
     padding:8px;
-    font-size: 24px;
+    font-size: 20px;
     background-color: transparent;
     display: grid;
     grid-template-columns: 2fr 4fr 1fr;
